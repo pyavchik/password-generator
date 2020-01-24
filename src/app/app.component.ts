@@ -12,7 +12,12 @@ export class AppComponent {
   includeSymbols = false;
 
   onButtonClick() {
-    console.log('Button was clicked');
+    console.log(`
+      About to generate a password with the following:
+      Include Letters ${this.includeLetters}
+      Include Numbers ${this.includeNumbers}
+      Include Symbols ${this.includeSymbols}
+    `);
     console.log(this.includeLetters);
     this.password = 'MY PASSWORD';
   }
