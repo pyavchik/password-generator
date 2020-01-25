@@ -10,6 +10,7 @@ export class AppComponent {
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
+  length = 0;
 
   onButtonClick() {
     console.log(`
@@ -32,5 +33,13 @@ export class AppComponent {
 
   onChangeUseSymbols() {
     this.includeSymbols = !this.includeSymbols;
+  }
+
+  onChangeLength(value: string) {
+    // tslint:disable-next-line:radix
+    const parsedValue = parseInt(value);
+    if (!isNaN(parsedValue)) {
+      this.length = parsedValue;
+    }
   }
 }
