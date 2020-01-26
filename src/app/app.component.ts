@@ -13,14 +13,28 @@ export class AppComponent {
   length = 0;
 
   onButtonClick() {
-    console.log(`
-      About to generate a password with the following:
-      Include Letters ${this.includeLetters}
-      Include Numbers ${this.includeNumbers}
-      Include Symbols ${this.includeSymbols}
-    `);
-    console.log(this.includeLetters);
-    this.password = 'MY PASSWORD';
+    const numbers = '1234567890';
+    const letters = 'abcdefghijklmnopqrstuvwyz';
+    const symbols = '!@#$%^&*()';
+
+    let validChars = '';
+    if (this.includeLetters) {
+      validChars += letters;
+    }
+    if (this.includeNumbers) {
+      validChars += numbers;
+    }
+    if (this.includeSymbols) {
+      validChars += symbols;
+    }
+
+    let generatedPassword = '';
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < this.length; i++) {
+      const index = Math.floor(Math.random() * validChars.length);
+      generatedPassword += validChars[index];
+    }
+    this.password = generatedPassword;
   }
 
   onChangeUseLetters() {
