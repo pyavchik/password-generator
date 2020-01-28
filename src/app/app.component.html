@@ -5,7 +5,7 @@
 
       <div class="field">
         <label>Length</label>
-        <input class="input" (input)="onChangeLength($event.target['value'])" />
+        <input digitOnly placeholder="000" pattern= "[0-9]" maxlength="3" class="input" (input)="onChangeLength($event.target['value'])" />
       </div>
 
       <div class="field">

@@ -14,7 +14,7 @@ export class AppComponent {
 
   onButtonClick() {
     const numbers = '1234567890';
-    const letters = 'abcdefghijklmnopqrstuvwyz';
+    const letters = 'abcdefghijklmnopqrstuvwyzABCDEFGHIJKLMNOPQRSTUVWYZ';
     const symbols = '!@#$%^&*()';
 
     let validChars = '';
