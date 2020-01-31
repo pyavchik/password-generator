@@ -5,7 +5,13 @@
 
       <div class="field">
         <label>Length</label>
-        <input digitOnly placeholder="000" pattern= "[0-9]" maxlength="3" class="input" (input)="onChangeLength($event.target['value'])" />
+        <input type="number"
+               min="1"
+               max="99"
+               ng-required="true"
+               ng-minlength="3"
+               ng-maxlength="99"
+               class="input" (input)="onChangeLength($event.target['value'])">
       </div>
 
       <div class="field">
