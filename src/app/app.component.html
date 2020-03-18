@@ -11,7 +11,8 @@
                ng-required="true"
                ng-minlength="3"
                ng-maxlength="99"
-               class="input" (input)="onChangeLength($event.target['value'])">
+               class="input"
+               (input)="onChangeLength($event)">
       </div>
 
       <div class="field">

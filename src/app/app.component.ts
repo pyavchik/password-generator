@@ -29,7 +29,6 @@ export class AppComponent {
     }
 
     let generatedPassword = '';
-    // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.length; i++) {
       const index = Math.floor(Math.random() * validChars.length);
       generatedPassword += validChars[index];
@@ -49,9 +48,8 @@ export class AppComponent {
     this.includeSymbols = !this.includeSymbols;
   }
 
-  onChangeLength(value: string) {
-    // tslint:disable-next-line:radix
-    const parsedValue = parseInt(value);
+  onChangeLength(event) {
+    const parsedValue = parseInt(event.target.value);
     if (!isNaN(parsedValue)) {
       this.length = parsedValue;
     }
